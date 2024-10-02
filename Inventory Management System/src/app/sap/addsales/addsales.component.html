@@ -1,0 +1,66 @@
+
+<div mat-dialog-title>
+    <h1>Sales Form</h1>
+</div>
+
+<form [formGroup]="salesForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Quantity Sold</mat-label>
+            <input matInput type="number" formControlName="quantitySold">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Unit Price</mat-label>
+            <input matInput type="number" formControlName="unitPrice">
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>GST%</mat-label>
+            <input matInput type="number" formControlName="gstPercentage">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Total Revenue</mat-label>
+            <input matInput type="number" formControlName="totalRevenue">
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Order Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="orderDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Client Id</mat-label>
+            <input matInput type="number" formControlName="clients">
+          </mat-form-field>
+    </div>
+
+    <div class="col">
+        <mat-form-field>
+            <mat-label>Delivery Status</mat-label>
+            <mat-select formControlName="status">
+                <mat-option *ngFor="let val of status" [value]="val">
+                  {{val}}
+      
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+         
+    </div>
+    
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</div>
+</form>

@@ -1,0 +1,53 @@
+<div mat-dialog-title>
+    <h1>Raw Material Form</h1>
+</div>
+<form [formGroup]="projectForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Project Name</mat-label>
+        <input matInput type="text" placeholder="Ex.Steel" formControlName="projectName">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="picker1" formControlName="startDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+</div>
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="endDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+
+<mat-form-field appearance="outline">
+    <mat-label>Order Quantity</mat-label>
+    <input matInput type="number"  formControlName="orderQuantity">
+  </mat-form-field>
+
+</div>
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Estimated Budget</mat-label>
+        <input matInput type="number" formControlName="estimatedBudget">
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline">
+        <mat-label>Total</mat-label>
+        <input matInput type="number"  formControlName="finalTotal">
+      </mat-form-field>
+
+    </div>
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data? 'Update':'Save'}}</button>
+</div>
+</form>

@@ -1,0 +1,61 @@
+<div mat-dialog-title>
+    <h1>Clients Form</h1>
+</div>
+<form [formGroup]="clientsForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput type="text" placeholder="Ex.Steel" formControlName="sname">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="semail">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Mobile Number</mat-label>
+        <input matInput type="number"  formControlName="mobileNo">
+      </mat-form-field>
+</div>
+<div class="row">
+<mat-form-field appearance="outline">
+    <mat-label>Company Name</mat-label>
+    <input matInput type="text"  formControlName="companyName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Company Contact Number</mat-label>
+    <input matInput type="number"  formControlName="companyContactNo">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Address</mat-label>
+    <input matInput type="text"  formControlName="address">
+  </mat-form-field>
+</div>
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Pincode</mat-label>
+        <input matInput type="number" formControlName="pinCode">
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline">
+        <mat-label>City</mat-label>
+        <input matInput type="name"  formControlName="city">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Client Type</mat-label>
+        <input matInput type="name"  formControlName="ClientType">
+      </mat-form-field>
+
+    </div>
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">{{data? 'Update':'Save'}}</button>
+</div>
+</form>

@@ -1,0 +1,50 @@
+<div mat-dialog-title>
+    <h1>Raw Material Consumption Form</h1>
+</div>
+<form [formGroup]="rawconForm">
+<div mat-dialog-content class="content">
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Project ID</mat-label>
+        <input matInput type="number" placeholder="Ex.8D34C" formControlName="projectId">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Product ID</mat-label>
+        <input matInput type="number" placeholder="Ex.Electric" formControlName="productId">
+      </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field appearance="outline">
+    <mat-label>Production Line ID</mat-label>
+    <input matInput type="number" placeholder="Ex.Electric" formControlName="productionLine">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Raw Material ID</mat-label>
+    <input matInput type="number" placeholder="Ex.Electric" formControlName="rawMaterialId">
+  </mat-form-field>
+</div>
+<div class="row">
+  <mat-form-field appearance="outline">
+    <mat-label>Quantity Consumed</mat-label>
+    <input matInput type="number" placeholder="Ex.Electric" formControlName="quantityConsumed">
+  </mat-form-field>
+    
+  <mat-form-field appearance="outline">
+    <mat-label>Scrap Generated</mat-label>
+    <input matInput type="number" placeholder="Ex.Electric" formControlName="scrapGenerated">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Total Material Cost</mat-label>
+    <input matInput type="number" placeholder="Ex.Electric" formControlName="totaMaterialCost">
+  </mat-form-field>
+    </div>
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" (click)="onFormSubmit()" >{{data? 'Update':'Save'}}</button>
+</div>
+</form>

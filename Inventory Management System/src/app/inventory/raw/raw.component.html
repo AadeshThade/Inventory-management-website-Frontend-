@@ -1,0 +1,87 @@
+<mat-toolbar color="primary">
+    <span>Raw Material</span>
+  </mat-toolbar>
+  <div class="main-body">
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Steel" #input>
+    </mat-form-field>
+    </div>
+<mat-toolbar-row> 
+   <span class="spacer">
+  <button mat-raised-button color="warn" (click)="openAddRawform()"> Add Raw Material</button> 
+</span>
+</mat-toolbar-row>
+
+
+<div class="main-body">
+    
+    
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+    
+      
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+    
+        
+        <ng-container matColumnDef="barcode">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Barcode</th>
+          <td mat-cell *matCellDef="let row"> {{row.barcode}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="quantity">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit Quantity</th>
+          <td mat-cell *matCellDef="let row"> {{row.quantity}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="unitPrice">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Unit Price</th>
+          <td mat-cell *matCellDef="let row"> {{row.unitPrice}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="unitMeasure">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Measurement</th>
+          <td mat-cell *matCellDef="let row"> {{row.unitMeasure}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="gstPercentage">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> GST %</th>
+          <td mat-cell *matCellDef="let row"> {{row.gstPercentage}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="reorderPoint">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Reorder Point</th>
+          <td mat-cell *matCellDef="let row"> {{row.reorderPoint}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="warehouse">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Warehouse Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.warehouse.whName}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action</th>
+          <td mat-cell *matCellDef="let row"> 
+            <button mat-icon-button color="primary" (click)="openEditForm(row)"><mat-icon>edit</mat-icon></button> 
+            <button mat-icon-button color="warn" (click)="deleteWarehouse(row.id)"><mat-icon>delete</mat-icon></button></td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+        </tr>
+      </table>
+    
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  
+  </div>
+  
+  
+    
+    

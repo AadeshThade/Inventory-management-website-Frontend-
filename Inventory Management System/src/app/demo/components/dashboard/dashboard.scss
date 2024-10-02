@@ -1,0 +1,164 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  
+  .header {
+    color: #fff;
+    padding: 10px 0;
+    
+  }
+  
+  .header .logo {
+    float: left;
+    // font-size: 24px;
+    margin-left: 470px;
+    color: #f4f4f4;
+    font-weight: 500;
+    font-size:large;
+
+  }
+  
+  .header nav {
+    float: right;
+  }
+  
+  .header nav ul {
+    list-style: none;
+  }
+  
+  .header nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .header::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Hero Section */
+  .hero {
+    background: url('../../../../assets/demo/images/product/invent.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero h2 {
+    font-size: 50px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+    margin: 20px 0;
+  }
+  
+  .hero .cta-button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+  
+  .hero .cta-button:hover {
+    background-color: #e35d51;
+  }
+  
+  /* Features Section */
+  .features {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .features .feature-box {
+    display: inline-block;
+    width: 30%;
+    padding: 20px;
+    margin: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .features .feature-box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .features .feature-box p {
+    font-size: 16px;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .footer .social-links {
+    list-style: none;
+    margin: 20px 0;
+  }
+  
+  .footer .social-links li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  .footer .social-links li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer .social-links li a:hover {
+    color: #ff6f61;
+  }
+  /* Social Media Links Styling */
+.social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .social-links li {
+    margin: 0 10px;
+  }
+  
+  .social-links li a {
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .social-links li a:hover {
+    color: #ff6f61; /* Hover effect color */
+  }
+  

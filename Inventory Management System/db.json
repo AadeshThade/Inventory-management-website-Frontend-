@@ -1,0 +1,51 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "warehouse": [
+    {
+      "warehouseID": "P32DS5",
+      "warehouseName": "Warehouse",
+      "managersname": "AADESH",
+      "managersemail": "THADE",
+      "warehouseAddress": "PLOT NO. 32B, SR. NO. 52/2, JAMBHULKAR CHOWK",
+      "warehousePincode": "411040",
+      "warehouseCity": "PUNE",
+      "id": 1
+    },
+    {
+      "warehouseID": "11222",
+      "warehouseName": "Wire",
+      "managersname": "rohan",
+      "managersemail": "sharma",
+      "warehouseAddress": "ABC",
+      "warehousePincode": "932188",
+      "warehouseCity": "MUMBAI",
+      "id": 3
+    },
+    {
+      "warehouseID": "72YSN3",
+      "warehouseName": "STEEL",
+      "managersname": "Mohit",
+      "managersemail": "Kjh",
+      "warehouseAddress": "WER",
+      "warehousePincode": "87382",
+      "warehouseCity": "NASHIK",
+      "id": 4
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+
+<div mat-dialog-title>
+    <h1>Quotation Form</h1>
+</div>
+
+<form [formGroup]="quotForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Reference Number</mat-label>
+            <input matInput type="text" formControlName="referenceNumber">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Total Purchase Amount</mat-label>
+            <input matInput type="number" formControlName="totalPOAmount">
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>GST Amount</mat-label>
+            <input matInput type="number" formControlName="totalGSTAmount">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Purchase Order Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="poDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Expected Delivery Date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="expectedDeliveryDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Order Status</mat-label>
+            <mat-select formControlName="orderStatus">
+                <mat-option *ngFor="let val of status" [value]="val">
+                  {{val}}
+      
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+        
+    </div>
+
+    <div class="col">
+        <mat-form-field>
+            <mat-label>Client Id</mat-label>
+            <input matInput type="number" formControlName="clients">
+          </mat-form-field>
+         
+    </div>
+    
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</div>
+</form>

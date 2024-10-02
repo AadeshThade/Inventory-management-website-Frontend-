@@ -1,0 +1,60 @@
+
+<div mat-dialog-title>
+    <h1>Purchase Detail Form</h1>
+</div>
+
+<form [formGroup]="detForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Quantity Order</mat-label>
+            <input matInput type="number" formControlName="qtyOrdered">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Gst tax percentage</mat-label>
+            <input matInput type="number" formControlName="gstTaxPercentage">
+          </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Price per unit</mat-label>
+            <input matInput type="number" formControlName="pricePerUnit">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Total price</mat-label>
+            <input matInput type="number" formControlName="totalPrice">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Discount</mat-label>
+            <input matInput type="number" formControlName="discount">
+          </mat-form-field>
+
+
+
+
+
+
+        </div>
+        <div class="row">
+          <mat-form-field>
+            <mat-label>rawMaterialId</mat-label>
+            <input matInput type="number" formControlName="rawMaterialId">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Purchase Quotation</mat-label>
+            <input matInput type="number" formControlName="purchaseQuotationId">
+          </mat-form-field>
+        </div>
+    
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</div>
+</form>

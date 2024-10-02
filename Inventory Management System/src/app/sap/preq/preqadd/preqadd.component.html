@@ -1,0 +1,61 @@
+
+<div mat-dialog-title>
+    <h1>Request Form</h1>
+</div>
+
+<form [formGroup]="reqForm" (ngSubmit)="onFormSubmit()">
+<div mat-dialog-content class="content">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Quantity Required</mat-label>
+            <input matInput type="number" formControlName="qtyRequired">
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>Request Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="requestDate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+
+    </div>
+
+    <div class="row">
+      <mat-form-field>
+        <mat-label>Expected Date</mat-label>
+        <input matInput [matDatepicker]="picker2" formControlName="expectedDate">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label> Status</mat-label>
+        <mat-select formControlName="status">
+            <mat-option *ngFor="let val of status" [value]="val">
+              {{val}}
+  
+            </mat-option>
+          </mat-select>
+      </mat-form-field>
+
+    </div>
+
+    <div class="row">
+      
+
+          <mat-form-field>
+            <mat-label>Raw material Id</mat-label>
+            <input matInput type="number" formControlName="rawMaterialId">
+          </mat-form-field>
+    </div>
+
+    
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit">Save</button>
+</div>
+</form>

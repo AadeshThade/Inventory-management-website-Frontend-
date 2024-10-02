@@ -1,0 +1,50 @@
+<div mat-dialog-title>
+    <h1>Warehouse Form</h1>
+</div>
+<form [formGroup]="wareForm">
+<div mat-dialog-content class="content">
+<div class="row">
+    <!-- <mat-form-field appearance="outline">
+        <mat-label>Warehouse ID</mat-label>
+        <input matInput type="number" placeholder="Ex.535675" formControlName="id">
+      </mat-form-field> -->
+
+      <mat-form-field appearance="outline">
+        <mat-label>Warehouse Name</mat-label>
+        <input matInput type="text" placeholder="Ex.Electric" formControlName="whName">
+      </mat-form-field>
+</div>
+<div class="row">
+<mat-form-field appearance="outline">
+    <mat-label>Manager's Name</mat-label>
+    <input matInput type="text" placeholder="Ex.Dev" formControlName="managerName">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Manager's Email</mat-label>
+    <input matInput type="text" placeholder="Ex.Dev@gmail.com" formControlName="managerEmail">
+  </mat-form-field>
+</div>
+<div class="row">
+    <mat-form-field appearance="outline">
+        <mat-label>Warehouse Address</mat-label>
+        <input matInput type="text" placeholder="" formControlName="address">
+      </mat-form-field>
+    
+      <mat-form-field appearance="outline">
+        <mat-label>Warehouse Pincode</mat-label>
+        <input matInput type="number" placeholder="Ex.411253" formControlName="pincode">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Warehouse City</mat-label>
+        <input matInput type="text" placeholder="Ex.Pune" formControlName="city">
+      </mat-form-field>
+    </div>
+</div>
+
+<div mat-dialog-actions class="action">
+    <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" (click)="onFormSubmit()" >{{data? 'Update':'Save'}}</button>
+</div>
+</form>
